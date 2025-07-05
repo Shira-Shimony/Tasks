@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-        shira
+        shira shimony
         </a>
       </header>
     </div>
