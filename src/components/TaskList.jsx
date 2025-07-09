@@ -1,32 +1,59 @@
-import React from 'react'
+import { useState } from "react"
 
 const TaskList = () => {
-    let tasks = [{
-        id: 1,
-        name: 'clean',
-        description: 'bla',
 
-    },
-    {
-        id: 2,
-        name: 'wash',
-        description: 'bla',
-    },
-    {
-        id: 3,
-        name: 'orgenize',
-        description: 'bla',
-    }]
+
+    const [tasks, setTask] = useState([
+        {
+            id: 1,
+            name: 'clean',
+            description: 'bla',
+
+        },
+        {
+            id: 3,
+            name: 'orgenize',
+            description: 'bla',
+
+
+        },
+        {
+            id: 4,
+            name: 'wash',
+            description: 'bla',
+
+
+        }
+    ])
+
+    const [TName,setName] = useState("")
+    const [TDescraption,setDescraption] = useState("")
+
+
     return (
         <div>
             <ul>
                 {tasks.map((task) =>
                     <li key={task.id}>
-                        {task.name}
-                    </li>
+                        <div>
+                            {task.name}
+                        </div>
+                        <div>
+                            {task.description}
+                        </div>
 
+
+                    </li>
+              
                 )}
+                <input
+                
+                
+                />
             </ul>
+            <button onClick={()=>{}}>
+                משימה חדשה
+            </button>
 
 
         </div>
