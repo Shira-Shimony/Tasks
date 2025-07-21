@@ -26,8 +26,18 @@ const TaskList = () => {
         }
     ])
 
+    const [Tid,setId] = useState("")
     const [TName,setName] = useState("")
     const [TDescraption,setDescraption] = useState("")
+    
+
+    const AddTaskList = () =>{
+        const NewTask ={
+        id : Number(Tid),
+        name: TName,
+        descraption:TDescraption
+        }
+    }
 
 
     return (
@@ -47,13 +57,28 @@ const TaskList = () => {
               
                 )}
                 <input
-                
+                type = "number"
+                value= {Tid}
+                onChange={(e)=>setId(e.target.value)}
+                />
+                <input
+                type="text"
+                value = {TName}
+                onChange={(e) =>setName(e.target.value)}
                 
                 />
+                <input
+                type= "text"
+                value= {TDescraption}
+                onClick={(e)=>setDescraption(e.target.value)}
+                
+                />
+                
+                
             </ul>
-            <button onClick={()=>{}}>
-                משימה חדשה
-            </button>
+            <button onClick={AddTaskList}>משימה חדשה </button>
+
+               
 
 
         </div>
