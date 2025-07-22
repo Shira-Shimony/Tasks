@@ -24,6 +24,7 @@ const TaskList = () => {
 
 
         }
+        
     ])
 
     const [Tid,setId] = useState("")
@@ -35,11 +36,16 @@ const TaskList = () => {
         const NewTask ={
         id : Number(Tid),
         name: TName,
-        descraption:TDescraption
+        description: TDescraption
         }
+        setTask([...tasks,NewTask])
+
+       setId("")
+       setName("")
+       setDescraption("")
     }
 
-
+   
     return (
         <div>
             <ul>
@@ -54,8 +60,10 @@ const TaskList = () => {
 
 
                     </li>
+                    
               
                 )}
+                </ul>
                 <input
                 type = "number"
                 value= {Tid}
@@ -70,12 +78,12 @@ const TaskList = () => {
                 <input
                 type= "text"
                 value= {TDescraption}
-                onClick={(e)=>setDescraption(e.target.value)}
+                onChange={(e)=>setDescraption(e.target.value)}
                 
                 />
                 
                 
-            </ul>
+            
             <button onClick={AddTaskList}>משימה חדשה </button>
 
                
