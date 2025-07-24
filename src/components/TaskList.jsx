@@ -24,7 +24,7 @@ const TaskList = () => {
 
 
         }
-        
+
     ])
 
     const [Tid,setId] = useState("")
@@ -45,6 +45,11 @@ const TaskList = () => {
        setDescraption("")
     }
 
+const DeleteTask = (idDel) => {
+  setTask(tasks.filter((task) => task.id !== idDel));
+}
+    
+
    
     return (
         <div>
@@ -53,10 +58,12 @@ const TaskList = () => {
                     <li key={task.id}>
                         <div>
                             {task.name}
+                            
                         </div>
                         <div>
                             {task.description}
                         </div>
+                        <button onClick={()=>DeleteTask(task.id)}>בוצע!</button>
 
 
                     </li>
@@ -64,11 +71,6 @@ const TaskList = () => {
               
                 )}
                 </ul>
-                <input
-                type = "number"
-                value= {Tid}
-                onChange={(e)=>setId(e.target.value)}
-                />
                 <input
                 type="text"
                 value = {TName}
