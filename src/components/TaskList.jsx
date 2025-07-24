@@ -27,20 +27,20 @@ const TaskList = () => {
 
     ])
 
-    const [Tid,setId] = useState("")
+    
     const [TName,setName] = useState("")
     const [TDescraption,setDescraption] = useState("")
     
 
     const AddTaskList = () =>{
         const NewTask ={
-        id : Number(Tid),
+        id: Date.now(),
         name: TName,
         description: TDescraption
         }
         setTask([...tasks,NewTask])
 
-       setId("")
+       
        setName("")
        setDescraption("")
     }
